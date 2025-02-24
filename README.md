@@ -14,5 +14,6 @@ E.g.:
 wellness "sitting in a chair"
 ```
 
-Try to enjoy each fact equally.
+If you omit the `topic` argument, a random fact will be generated.
 
+Try to enjoy each fact equally.
