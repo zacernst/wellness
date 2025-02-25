@@ -9,18 +9,14 @@ After installing, just type `wellness [topic]`. The topic is optional, but if yo
 Here are some samples:
 
 ```
-% wellness "room ventilation"
-Your outtie excels at finding the perfect balance between opening and closing windows to create just the right airflow in any room.
+% wellness "long train rides"
+Your outtie finds solace in listening to nostalgic songs during long train rides.
 % wellness "dogs"
-Your outtie can always predict a dog's next move during playtime.
-% wellness "Python programming"
-Your outtie has a knack for using list comprehensions in Python that always impresses those around them.
-% wellness "long train rides"  
-Your outtie always finds the coziest spot by the window on long train rides.
-% wellness "vegetables"      
-Your outtie effortlessly selects the ripest tomatoes every time they go grocery shopping.
-% wellness "swimming"
-Your outtie effortlessly executes a flawless cannonball dive each time they hit the pool.
+Your outtie always gets a little teary-eyed watching old dog movies.
+% wellness
+Your outtie can identify the perfect cookie-to-ice cream ratio for a delectable sandwich treat.
+% wellness "declarative programming in Prolog"
+Your outtie impressed everyone by successfully implementing a unique sorting algorithm in Prolog during a coding competition.
 ```
 
 ## Requirements
