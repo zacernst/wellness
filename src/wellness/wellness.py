@@ -1,17 +1,20 @@
-#! env python
+"""
+Praise Kier
+"""
 
 import os
-
-from openai import OpenAI
-from typing import Optional
+import pathlib
+import random
+from typing import List, Optional
 
 import click
-
+from openai import OpenAI
 
 client = OpenAI()
 
-with open('PROMPT.txt', 'r', 'utf8') as f:
-    PROMPT = f.read()
+PROMPT_PATH = pathlib.Path(__file__).parent / "PROMPT.txt"
+with open(PROMPT_PATH, "r") as f:
+    PROMPTS = f.read().split("\n")
 
 
 @click.group()
@@ -21,24 +24,26 @@ def main():
 
 @main.command()
 @click.argument("topic", default="")
-def wellness(topic: Optional[str] = ""):
+def wellness(topic: Optional[str]):
+    """Generate a pleasing fact about your outtie."""
+    prompt = random.choice(PROMPTS)
     if topic:
-        prompt = PROMPT + f"The topic of the compliment should be '{topic}'."
-    else:
-        prompt = PROMPT
+        prompt += f" The topic of the statement should be '{topic}'."
 
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
+            {
+                "role": "system",
+                "content": "You are a gifted writer who is good friends with the user.",
+            },
             {"role": "user", "content": prompt},
         ],
     )
 
     response = completion.choices[0].message.content
-    print(response)
-    return response
+    click.echo(response)
 
 
 if __name__ == "__main__":
-    click.echo(wellness())
+    wellness()
